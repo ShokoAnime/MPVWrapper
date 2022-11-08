@@ -1,73 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{88D69C8E-A6BF-4427-9DD4-022F74AEFCCE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Nutzcode.MPVPlayer.WPF.Wrapper</RootNamespace>
     <AssemblyName>Nutzcode.MPVPlayer.WPF.Wrapper</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <RuntimeIdentifiers>win10-x64;win</RuntimeIdentifiers>
-    <FileAlignment>512</FileAlignment>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Deterministic>true</Deterministic>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
-    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
-    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
-    <Prefer32Bit>false</Prefer32Bit>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
-    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
-    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
-    <Prefer32Bit>false</Prefer32Bit>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWpf>true</UseWpf>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
@@ -86,159 +32,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Device.cs" />
-    <Compile Include="HwdExtensions\Adorner\HwndAdorner.cs" />
-    <Compile Include="HwdExtensions\Adorner\HwndAdornerElement.cs" />
-    <Compile Include="HwdExtensions\Adorner\HwndAdornerGroup.cs" />
-    <Compile Include="HwdExtensions\Adorner\HwndAdornerManager.cs" />
-    <Compile Include="HwdExtensions\Adorner\HwndAdornmentRoot.cs" />
-    <Compile Include="HwdExtensions\Adorner\IHwndAdornerManager.cs" />
-    <Compile Include="HwdExtensions\Host\ConnectToHostManagerBehavior.cs" />
-    <Compile Include="HwdExtensions\Host\ExtendedHwndHost.cs" />
-    <Compile Include="HwdExtensions\Host\HwndHostGroup.cs" />
-    <Compile Include="HwdExtensions\Host\HwndHostManager.cs" />
-    <Compile Include="HwdExtensions\Host\HwndHostPresenter.cs" />
-    <Compile Include="HwdExtensions\Host\IHwndHolder.cs" />
-    <Compile Include="HwdExtensions\Host\IHwndHostManager.cs" />
-    <Compile Include="HwdExtensions\HwndExtensions.cs" />
-    <Compile Include="HwdExtensions\Utils\DispatchUI.cs" />
-    <Compile Include="HwdExtensions\Utils\EnumerableExtensions.cs" />
-    <Compile Include="HwdExtensions\Utils\HwndSourceConnector.cs" />
-    <Compile Include="HwdExtensions\Utils\RectUtil.cs" />
-    <Compile Include="HwdExtensions\Utils\Win32.cs" />
-    <Compile Include="HwdExtensions\Utils\WindowConnector.cs" />
-    <Compile Include="HwdExtensions\Utils\WPFTreeExtensions.cs" />
-    <Compile Include="Models\KeyAction.cs" />
-    <Compile Include="Models\KeyBinding.cs" />
-    <Compile Include="Models\KeyBindings.cs" />
-    <Compile Include="Models\Languages.cs" />
-    <Compile Include="Controls\Loading.xaml.cs">
-      <DependentUpon>Loading.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PlayerSettings.cs" />
-    <Compile Include="Stream.cs" />
-    <Compile Include="Settings.xaml.cs">
-      <DependentUpon>Settings.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Streams.xaml.cs">
-      <DependentUpon>Streams.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Controls\Button.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\Seekbar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Time.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Volume.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\ControlBar.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="Controls\Button.xaml.cs">
-      <DependentUpon>Button.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Play.cs" />
-    <Compile Include="Controls\Seekbar.xaml.cs">
-      <DependentUpon>Seekbar.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Time.xaml.cs">
-      <DependentUpon>Time.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Volume.xaml.cs">
-      <DependentUpon>Volume.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Delegates.cs" />
-    <Compile Include="Controls\Menu.xaml.cs">
-      <DependentUpon>Menu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Extensions.cs" />
-    <Compile Include="MPVInterop.cs" />
-    <Compile Include="NativePlayer.cs" />
-    <Compile Include="NativePresenter.cs" />
-    <Compile Include="Player.xaml.cs">
-      <DependentUpon>Player.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PlayRequest.cs" />
-    <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="Controls\ControlBar.xaml.cs">
-      <DependentUpon>ControlBar.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Controls\Menu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Loading.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Player.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Settings.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Streams.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\knob.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\fs.png" />
-    <Resource Include="images\mute.png" />
-    <Resource Include="images\pause.png" />
-    <Resource Include="images\play.png" />
-    <Resource Include="images\volume.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\audio.png" />
-    <Resource Include="images\config.png" />
-    <Resource Include="images\menu.png" />
-    <Resource Include="images\subs.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\exit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\spinnerblue.png" />
+    <Resource Include="images\**\*.*" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="libs\System.Windows.Interactivity.dll" />
@@ -249,5 +43,7 @@
       <Link>x86\mpv-1.dll</Link>
     </Libs>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+  </ItemGroup>
 </Project>
